@@ -1,0 +1,44 @@
+# RetinaNet Object Detection – BDD100K (Cars & Pedestrians)
+
+This project implements **RetinaNet** using **KerasCV** and trains it on a subset of the **BDD100K driving dataset** to detect **vehicles and pedestrians** in real-world traffic scenes.
+
+---
+
+## 🚗 Project Overview
+
+### Goal
+Train a custom RetinaNet detector for 2 classes:
+- **car**
+- **pedestrian**
+
+### Highlights
+- RetinaNet backbone from KerasCV.
+- Ragged tensors for variable-length bounding boxes.
+- Custom label encoding & anchor matching.
+- Visualization utilities to draw detection results.
+- Supports GPU training (Colab-ready).
+
+---
+
+## 🧱 Architecture
+
+- Backbone: **ResNet50** (frozen/unfrozen configurable).
+- Loss: Focal Loss + Smooth L1.
+- Training: end-to-end using KerasCV presets.
+- Batch size: ragged tensors → no densification required.
+
+---
+
+## 📂 Project Structure
+
+project/
+│── data/
+│ └── bdd100k/ # Not included — download link below
+│── src/
+│ ├── dataset.py # Load frames, parse labels, build tf.data pipeline
+│ ├── model.py # RetinaNet creation + compilation
+│ ├── train.py # Main training script
+│ └── visualize.py # Prediction and drawing utilities
+│── notebooks/
+│── results/
+│── README.md
