@@ -1,0 +1,11 @@
+# Git ignore rules
+
+# Data Folder:
+Data/
+
+# Docs Folder:
+Docs/
+
+# Trained Models:
+Notebooks/efficientdet_car_pedestrian.keras
+*.keras
